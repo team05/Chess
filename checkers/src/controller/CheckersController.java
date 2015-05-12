@@ -23,7 +23,7 @@ public class CheckersController implements java.awt.event.ActionListener {
             JButton jb = (JButton) e.getSource();
             //ha menü
             if (jb.getText().equals("Back to menu")) {
-                //itt majd vissza a menübe
+                view.goToMenu();
             } else if (jb.getText().equals("New Game")) {
                 //itt majd új játék
             }
