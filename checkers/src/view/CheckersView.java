@@ -5,10 +5,14 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.GridLayout;
+import java.awt.Image;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.IOException;
 import java.util.Observable;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -21,6 +25,7 @@ public class CheckersView implements java.util.Observer {
     private JLabel nextPlayer = new JLabel("     itt jelezni melyik játékos jön");
     private JButton newGameButton = new JButton("New Game");
     private JButton backToMenu = new JButton("Back to menu");
+    private Image rStone, bStone;
 
     CheckersView() {
 
@@ -47,11 +52,11 @@ public class CheckersView implements java.util.Observer {
 
     }
     
-    //tábla felépítése
+    //tábla felepitese
     private void initButtons() {
         gamePanel.removeAll();
         gamePanel.setLayout(new GridLayout(8, 8));
-        
+        loadIcons();
         int z = 1;
         for (int j = 0; j < 8; j++) {
             for (int i = 0; i < 8; i++) {
@@ -66,13 +71,14 @@ public class CheckersView implements java.util.Observer {
                 }
 
                 z++;
+                addIconToButton(i, j, buttons[i][j]);
                 gamePanel.add(buttons[i][j]);
             }
             z++;
         }
     }
 
-    //eseménykezelők a gombokhoz, táblához
+    //eseménykezelok a gombokhoz, tablahoz
     public void addController(ActionListener controller) {
 
         newGameButton.addActionListener(controller);
@@ -85,6 +91,53 @@ public class CheckersView implements java.util.Observer {
 
     }
     
+    //vissza a menube
+    public void goToMenu() {
+        new MainFrame().setVisible(true);
+        frame.setVisible(false);
+        frame.dispose();
+    }
+    
+      //gombhoz ikonok (kepek)
+    private void addIconToButton(int x, int y, JButton bu) {
+        // kek
+        if (y == 0 || y == 2) {
+            if (x % 2 == 0) {
+                bu.setIcon(new ImageIcon(bStone));
+            }
+        }
+
+        if (y == 1) {
+            if (x % 2 == 1) {
+                bu.setIcon(new ImageIcon(bStone));
+            }
+        }
+
+        // piros
+        if (y == 5 || y == 7) {
+            if (x % 2 == 1) {
+                bu.setIcon(new ImageIcon(rStone));
+            }
+        }
+
+        if (y == 6) {
+            if (x % 2 == 0) {
+                bu.setIcon(new ImageIcon(rStone));
+            }
+        }
+
+    }
+    
+    //képek betöltése
+    private void loadIcons() {
+        try {
+            rStone = ImageIO.read(getClass().getResource("resources/redStone.jpg"));
+            bStone = ImageIO.read(getClass().getResource("resources/blueStone.jpg"));
+           
+        } catch (IOException ex) {
+            System.out.println("Nincs meg valamelyik bábu ikonja!");
+        }
+    }
     @Override
     public void update(Observable o, Object arg) {
 
