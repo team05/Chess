@@ -12,9 +12,11 @@ import java.awt.event.WindowEvent;
 import java.io.IOException;
 import java.util.Observable;
 import javax.imageio.ImageIO;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class CheckersView implements java.util.Observer {
@@ -25,7 +27,8 @@ public class CheckersView implements java.util.Observer {
     private JLabel nextPlayer = new JLabel("     itt jelezni melyik játékos jön");
     private JButton newGameButton = new JButton("New Game");
     private JButton backToMenu = new JButton("Back to menu");
-    private Image rStone, bStone;
+    private Image rStone, bStone, rQueen, bQueen;
+    private Color oldBackGroundColor; //a régi gomb színe
 
     CheckersView() {
 
@@ -51,7 +54,7 @@ public class CheckersView implements java.util.Observer {
         frame.setVisible(true);
 
     }
-    
+
     //tábla felepitese
     private void initButtons() {
         gamePanel.removeAll();
@@ -90,15 +93,15 @@ public class CheckersView implements java.util.Observer {
         }
 
     }
-    
+
     //vissza a menube
     public void goToMenu() {
         new MainFrame().setVisible(true);
         frame.setVisible(false);
         frame.dispose();
     }
-    
-      //gombhoz ikonok (kepek)
+
+    //gombhoz ikonok (kepek)
     private void addIconToButton(int x, int y, JButton bu) {
         // kek
         if (y == 0 || y == 2) {
@@ -127,22 +130,98 @@ public class CheckersView implements java.util.Observer {
         }
 
     }
+    //vissza állítjuk a korábbi színre a gomb színét, ,,nincs kijelölve"
+    public void setUnselected(Button bu) {
+        bu.setBackground(oldBackGroundColor);
+    }
+    //voisszaállítja a táblát az eredeti állapotba
+    public void resetBackGrounds() {
+        int z = 1;
+        for (int j = 0; j < 8; j++) {
+            for (int i = 0; i < 8; i++) {
+
+                if (z % 2 == 0) {
+                    buttons[i][j].setBackground(Color.LIGHT_GRAY);
+                } else {
+                    buttons[i][j].setBackground(Color.WHITE);
+                }
+
+                z++;
+
+            }
+            z++;
+        }
+    }
+    public void setQueen(int x, int y, boolean dark) {
+        if (dark) {
+            buttons[x][y].setIcon(new ImageIcon(bQueen));
+        } else {
+            buttons[x][y].setIcon(new ImageIcon(rQueen));
+        }
+    }
     
+    //beállítjuk a kiválasztott gomb színét pirosra
+    public void setRed(Button bu) {
+        oldBackGroundColor = bu.getBackground();
+        bu.setBackground(Color.red);
+    }
+    //gomb háttérszínét beállítjuk kékre
+    public void setBlue(Button bu) {
+
+        bu.setBackground(Color.blue);
+    }
+    
+    //visszadjuk a paraméterként kapott pozícióban található gombot
+    public Button getButtonAt(int x, int y) {
+        return buttons[x][y];
+    }
+    //visszaadja az ikont
+    public Icon getIcon(int x, int y) {
+        return buttons[x][y].getIcon();
+    }
+    //beállítjuk az ikont
+    public void setIcon(int x, int y, Icon icon) {
+        buttons[x][y].setIcon(icon);
+    }
+
     //képek betöltése
     private void loadIcons() {
         try {
             rStone = ImageIO.read(getClass().getResource("resources/redStone.jpg"));
             bStone = ImageIO.read(getClass().getResource("resources/blueStone.jpg"));
-           
+
         } catch (IOException ex) {
             System.out.println("Nincs meg valamelyik bábu ikonja!");
         }
     }
+    //játék végét kiíró ablak
+    public void gameOver(boolean dark) {
+        if (dark) {
+            JOptionPane.showMessageDialog(null,
+                    "Game Over! Red player won!",
+                    "Game Over",
+                    JOptionPane.PLAIN_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null,
+                    "Game Over! Blue player won!",
+                    "Game Over",
+                    JOptionPane.PLAIN_MESSAGE);
+        }
+    }
+    
+    public void setLabel(boolean dark) {
+        if (dark) {
+            nextPlayer.setText("     Next Player: Blue");
+        } else {
+            nextPlayer.setText("     Next Player: Red");
+        }
+    }
+
     @Override
     public void update(Observable o, Object arg) {
-
     }
     //ablak bezárás figyelése
+
     public static class CloseListener extends WindowAdapter {
 
         @Override
@@ -151,5 +230,4 @@ public class CheckersView implements java.util.Observer {
             System.exit(0);
         }
     }
-
 }
