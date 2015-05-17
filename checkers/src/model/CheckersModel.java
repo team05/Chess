@@ -121,4 +121,237 @@ public class CheckersModel extends java.util.Observable {
         }
         return empty;
     }
+    
+    //hova léphetünk, alacsony szintű megvalósítása
+    public boolean stoneCanMove(int fromX, int fromY, int toX, int toY) {
+        if (!(getFigure(fromX, fromY).isDark())) {
+            //balra fel
+            if (toX + 1 == fromX && toY + 1 == fromY) {
+                if (getFigure(toX, toY) != null) {
+
+                    return false;
+                }
+            }
+
+            //jobbra fel
+            if (toX == fromX + 1 && toY + 1 == fromY) {
+                if (getFigure(toX, toY) != null) {
+
+                    return false;
+                }
+            }
+
+        } else {
+            //balra le
+            if (toX + 1 == fromX && toY == fromY + 1) {
+                if (getFigure(toX, toY) != null) {
+
+                    return false;
+                }
+            }
+
+            //jobbra le
+            if (toX == fromX + 1 && toY == fromY + 1) {
+                if (getFigure(toX, toY) != null) {
+
+                    return false;
+                }
+            }
+
+            if (fromX == toX && fromY == toY) {
+                return false;
+            }
+
+        }
+        return getFigure(fromX, fromY).canMoveTo(toX, toY);
+    }
+    //hova léphetünk a másik bábuval
+    public boolean queenCanMove(int fromX, int fromY, int toX, int toY) {
+
+        //balra fel
+        if (toX + 1 == fromX && toY + 1 == fromY) {
+            if (getFigure(toX, toY) != null) {
+
+                return false;
+            }
+        }
+
+        //jobbra fel
+        if (toX == fromX + 1 && toY + 1 == fromY) {
+            if (getFigure(toX, toY) != null) {
+
+                return false;
+            }
+        }
+
+        //balra le
+        if (toX + 1 == fromX && toY == fromY + 1) {
+            if (getFigure(toX, toY) != null) {
+
+                return false;
+            }
+        }
+
+        //jobbra le
+        if (toX == fromX + 1 && toY == fromY + 1) {
+            if (getFigure(toX, toY) != null) {
+
+                return false;
+            }
+        }
+
+        if (fromX == toX && fromY == toY) {
+            return false;
+        }
+
+        return getFigure(fromX, fromY).canMoveTo(toX, toY);
+    }
+    
+    //elfoglalhatjuk-e a másik mezőt
+    public boolean stoneCanCapture(int fromX, int fromY, int toX, int toY) {
+        if (!(getFigure(fromX, fromY).isDark())) {
+            //balra fel
+            if (toX == fromX - 2 && toY == fromY - 2) {
+                if (getFigure(toX, toY) == null) {
+                    if (getFigure(toX + 1, toY + 1) != null) {
+                        if (getFigure(toX + 1, toY + 1).isDark()) {
+                            return true;
+                        }
+                    }
+                }
+            }
+
+            //jobbra fel
+            if (toX == fromX + 2 && toY == fromY - 2) {
+                if (getFigure(toX, toY) == null) {
+                    if (getFigure(toX - 1, toY + 1) != null) {
+                        if (getFigure(toX - 1, toY + 1).isDark()) {
+                            return true;
+                        }
+                    }
+                }
+            }
+
+        } else {
+            //balra le
+            if (toX == fromX - 2 && toY == fromY + 2) {
+                if (getFigure(toX, toY) == null) {
+                    if (getFigure(toX + 1, toY - 1) != null) {
+                        if (!(getFigure(toX + 1, toY - 1).isDark())) {
+                            return true;
+                        }
+                    }
+                }
+            }
+
+            //jobbra le
+            if (toX == fromX + 2 && toY == fromY + 2) {
+                if (getFigure(toX, toY) == null) {
+                    if (getFigure(toX - 1, toY - 1) != null) {
+                        if (!(getFigure(toX - 1, toY - 1).isDark())) {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+    //elfoglalhatjuk-e a másik mezőt
+    public boolean queenCanCapture(int fromX, int fromY, int toX, int toY) {
+        if (!(getFigure(fromX, fromY).isDark())) {
+            //balra fel
+            if (toX == fromX - 2 && toY == fromY - 2) {
+                if (getFigure(toX, toY) == null) {
+                    if (getFigure(toX + 1, toY + 1) != null) {
+                        if (getFigure(toX + 1, toY + 1).isDark()) {
+                            return true;
+                        }
+                    }
+                }
+            }
+
+            //jobbra fel
+            if (toX == fromX + 2 && toY == fromY - 2) {
+                if (getFigure(toX, toY) == null) {
+                    if (getFigure(toX - 1, toY + 1) != null) {
+                        if (getFigure(toX - 1, toY + 1).isDark()) {
+                            return true;
+                        }
+                    }
+                }
+            }
+
+            //balra le
+            if (toX == fromX - 2 && toY == fromY + 2) {
+                if (getFigure(toX, toY) == null) {
+                    if (getFigure(toX + 1, toY - 1) != null) {
+                        if ((getFigure(toX + 1, toY - 1).isDark())) {
+                            return true;
+                        }
+                    }
+                }
+            }
+
+            //jobbra le
+            if (toX == fromX + 2 && toY == fromY + 2) {
+                if (getFigure(toX, toY) == null) {
+                    if (getFigure(toX - 1, toY - 1) != null) {
+                        if ((getFigure(toX - 1, toY - 1).isDark())) {
+                            return true;
+                        }
+                    }
+                }
+            }
+
+        } else {
+
+            //balra fel
+            if (toX == fromX - 2 && toY == fromY - 2) {
+                if (getFigure(toX, toY) == null) {
+                    if (getFigure(toX + 1, toY + 1) != null) {
+                        if (!(getFigure(toX + 1, toY + 1).isDark())) {
+                            return true;
+                        }
+                    }
+                }
+            }
+
+            //jobbra fel
+            if (toX == fromX + 2 && toY == fromY - 2) {
+                if (getFigure(toX, toY) == null) {
+                    if (getFigure(toX - 1, toY + 1) != null) {
+                        if (!(getFigure(toX - 1, toY + 1).isDark())) {
+                            return true;
+                        }
+                    }
+                }
+            }
+
+            //balra le
+            if (toX == fromX - 2 && toY == fromY + 2) {
+                if (getFigure(toX, toY) == null) {
+                    if (getFigure(toX + 1, toY - 1) != null) {
+                        if (!(getFigure(toX + 1, toY - 1).isDark())) {
+                            return true;
+                        }
+                    }
+                }
+            }
+
+            //jobbra le
+            if (toX == fromX + 2 && toY == fromY + 2) {
+                if (getFigure(toX, toY) == null) {
+                    if (getFigure(toX - 1, toY - 1) != null) {
+                        if (!(getFigure(toX - 1, toY - 1).isDark())) {
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+    
+    
 }
