@@ -19,6 +19,9 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+/**
+ * The class which represents the Chess Table
+ */
 public class ChessView implements java.util.Observer {
 
     private JPanel gamePanel;
@@ -56,6 +59,9 @@ public class ChessView implements java.util.Observer {
 
     }
 
+    /**
+     * Initializing of Buttons
+     */
     private void initButtons() {
         gamePanel.removeAll();
         gamePanel.setLayout(new GridLayout(8, 8));
@@ -82,6 +88,9 @@ public class ChessView implements java.util.Observer {
         }
     }
 
+    /** 
+     * Returns a button on the specified coordinates
+     */
     public Button getButtonAt(int x, int y) {
         return buttons[x][y];
     }
