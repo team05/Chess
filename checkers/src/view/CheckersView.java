@@ -24,7 +24,7 @@ public class CheckersView implements java.util.Observer {
     private JPanel gamePanel;
     private Button buttons[][];
     private Frame frame;
-    private JLabel nextPlayer = new JLabel("     itt jelezni melyik játékos jön");
+    private JLabel nextPlayer = new JLabel("     Next Player: Red");
     private JButton newGameButton = new JButton("New Game");
     private JButton backToMenu = new JButton("Back to menu");
     private Image rStone, bStone, rQueen, bQueen;
@@ -189,6 +189,8 @@ public class CheckersView implements java.util.Observer {
         try {
             rStone = ImageIO.read(getClass().getResource("resources/redStone.jpg"));
             bStone = ImageIO.read(getClass().getResource("resources/blueStone.jpg"));
+            rQueen = ImageIO.read(getClass().getResource("resources/redQueen.jpg"));
+            bQueen = ImageIO.read(getClass().getResource("resources/blueQueen.jpg"));
 
         } catch (IOException ex) {
             System.out.println("Nincs meg valamelyik bábu ikonja!");
