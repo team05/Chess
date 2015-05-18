@@ -1,0 +1,248 @@
+\hypertarget{classmodel_1_1_checkers_model}{}\section{model.\+Checkers\+Model Class Reference}
+\label{classmodel_1_1_checkers_model}\index{model.\+Checkers\+Model@{model.\+Checkers\+Model}}
+
+
+A tabla modellje. Logikailag itt zajlik a jatek.  
+
+
+Inheritance diagram for model.\+Checkers\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmodel_1_1_checkers_model}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classmodel_1_1_checkers_model_ac6911ccd3b1d3718db06fd8ea7f2d7b3}{}void \hyperlink{classmodel_1_1_checkers_model_ac6911ccd3b1d3718db06fd8ea7f2d7b3}{set\+Default\+Figures} ()\label{classmodel_1_1_checkers_model_ac6911ccd3b1d3718db06fd8ea7f2d7b3}
+
+\begin{DoxyCompactList}\small\item\em A standard jatekosok betoltese. \end{DoxyCompactList}\item 
+\hyperlink{classmodel_1_1_checkers_figure}{Checkers\+Figure} \hyperlink{classmodel_1_1_checkers_model_a3c802fe132a08baddf712e09df96cab9}{get\+Figure} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Adott poziciorol visszaadja a babu objektumot. \end{DoxyCompactList}\item 
+List$<$ \hyperlink{classmodel_1_1_pair}{Pair} $>$ \hyperlink{classmodel_1_1_checkers_model_a5bf2d3775839b95e7f13cf3e765b6981}{set\+Can\+Move\+To} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Visszaadja azon poziciok listajat, ahova lephetunk. \end{DoxyCompactList}\item 
+void \hyperlink{classmodel_1_1_checkers_model_ad36574e98ce2f7b1983d25c376e0a3e6}{set\+Figure} (int x, int y, \hyperlink{classmodel_1_1_checkers_figure}{Checkers\+Figure} f)
+\begin{DoxyCompactList}\small\item\em A tablat reprezentalo matrix adott poziciojat beallitja a parameterul kapott figuranak. \end{DoxyCompactList}\item 
+boolean \hyperlink{classmodel_1_1_checkers_model_a2825ba09fc35c7fa69c0ab470a32c0db}{is\+Game\+Over} (boolean dark)
+\begin{DoxyCompactList}\small\item\em A jatek veget figyelo fuggveny. \end{DoxyCompactList}\item 
+boolean \hyperlink{classmodel_1_1_checkers_model_a3390a48c6e78518edd28532969fc46d6}{stone\+Can\+Move} (int from\+X, int from\+Y, int to\+X, int to\+Y)
+\begin{DoxyCompactList}\small\item\em Honnan hova lephetunk figyeleset vegzo fuggeny (alapbabuval). \end{DoxyCompactList}\item 
+boolean \hyperlink{classmodel_1_1_checkers_model_a598d81ff2ad93c90dfa1cf3bcad5422c}{queen\+Can\+Move} (int from\+X, int from\+Y, int to\+X, int to\+Y)
+\begin{DoxyCompactList}\small\item\em Honnan hova lephetunk figyeleset vegzo fuggeny (kiralynovel). \end{DoxyCompactList}\item 
+boolean \hyperlink{classmodel_1_1_checkers_model_aaafda9b9ae1510b65a7c1a576255a5b0}{stone\+Can\+Capture} (int from\+X, int from\+Y, int to\+X, int to\+Y)
+\begin{DoxyCompactList}\small\item\em Azt figyeli, hogy le tudunk e venni az ellenfel jatekosai kozul. (alapbabuval) \end{DoxyCompactList}\item 
+boolean \hyperlink{classmodel_1_1_checkers_model_ab9109be8e090812d614b3aa9f8cf3a7b}{queen\+Can\+Capture} (int from\+X, int from\+Y, int to\+X, int to\+Y)
+\begin{DoxyCompactList}\small\item\em Azt figyeli, hogy le tudunk e venni az ellenfel jatekosai kozul. (kiralynovel) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A tabla modellje. Logikailag itt zajlik a jatek. 
+
+\begin{DoxyAuthor}{Author}
+team05 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classmodel_1_1_checkers_model_a3c802fe132a08baddf712e09df96cab9}{}\index{model\+::\+Checkers\+Model@{model\+::\+Checkers\+Model}!get\+Figure@{get\+Figure}}
+\index{get\+Figure@{get\+Figure}!model\+::\+Checkers\+Model@{model\+::\+Checkers\+Model}}
+\subsubsection[{get\+Figure}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Checkers\+Figure} model.\+Checkers\+Model.\+get\+Figure (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\label{classmodel_1_1_checkers_model_a3c802fe132a08baddf712e09df96cab9}
+
+
+Adott poziciorol visszaadja a babu objektumot. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classmodel_1_1_checkers_figure}{Checkers\+Figure} 
+\end{DoxyReturn}
+\hypertarget{classmodel_1_1_checkers_model_a2825ba09fc35c7fa69c0ab470a32c0db}{}\index{model\+::\+Checkers\+Model@{model\+::\+Checkers\+Model}!is\+Game\+Over@{is\+Game\+Over}}
+\index{is\+Game\+Over@{is\+Game\+Over}!model\+::\+Checkers\+Model@{model\+::\+Checkers\+Model}}
+\subsubsection[{is\+Game\+Over}]{\setlength{\rightskip}{0pt plus 5cm}boolean model.\+Checkers\+Model.\+is\+Game\+Over (
+\begin{DoxyParamCaption}
+\item[{boolean}]{dark}
+\end{DoxyParamCaption}
+)}\label{classmodel_1_1_checkers_model_a2825ba09fc35c7fa69c0ab470a32c0db}
+
+
+A jatek veget figyelo fuggveny. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dark} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+\hypertarget{classmodel_1_1_checkers_model_ab9109be8e090812d614b3aa9f8cf3a7b}{}\index{model\+::\+Checkers\+Model@{model\+::\+Checkers\+Model}!queen\+Can\+Capture@{queen\+Can\+Capture}}
+\index{queen\+Can\+Capture@{queen\+Can\+Capture}!model\+::\+Checkers\+Model@{model\+::\+Checkers\+Model}}
+\subsubsection[{queen\+Can\+Capture}]{\setlength{\rightskip}{0pt plus 5cm}boolean model.\+Checkers\+Model.\+queen\+Can\+Capture (
+\begin{DoxyParamCaption}
+\item[{int}]{from\+X, }
+\item[{int}]{from\+Y, }
+\item[{int}]{to\+X, }
+\item[{int}]{to\+Y}
+\end{DoxyParamCaption}
+)}\label{classmodel_1_1_checkers_model_ab9109be8e090812d614b3aa9f8cf3a7b}
+
+
+Azt figyeli, hogy le tudunk e venni az ellenfel jatekosai kozul. (kiralynovel) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em from\+X} & \\
+\hline
+{\em from\+Y} & \\
+\hline
+{\em to\+X} & \\
+\hline
+{\em to\+Y} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\hypertarget{classmodel_1_1_checkers_model_a598d81ff2ad93c90dfa1cf3bcad5422c}{}\index{model\+::\+Checkers\+Model@{model\+::\+Checkers\+Model}!queen\+Can\+Move@{queen\+Can\+Move}}
+\index{queen\+Can\+Move@{queen\+Can\+Move}!model\+::\+Checkers\+Model@{model\+::\+Checkers\+Model}}
+\subsubsection[{queen\+Can\+Move}]{\setlength{\rightskip}{0pt plus 5cm}boolean model.\+Checkers\+Model.\+queen\+Can\+Move (
+\begin{DoxyParamCaption}
+\item[{int}]{from\+X, }
+\item[{int}]{from\+Y, }
+\item[{int}]{to\+X, }
+\item[{int}]{to\+Y}
+\end{DoxyParamCaption}
+)}\label{classmodel_1_1_checkers_model_a598d81ff2ad93c90dfa1cf3bcad5422c}
+
+
+Honnan hova lephetunk figyeleset vegzo fuggeny (kiralynovel). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em from\+X} & \\
+\hline
+{\em from\+Y} & \\
+\hline
+{\em to\+X} & \\
+\hline
+{\em to\+Y} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+\hypertarget{classmodel_1_1_checkers_model_a5bf2d3775839b95e7f13cf3e765b6981}{}\index{model\+::\+Checkers\+Model@{model\+::\+Checkers\+Model}!set\+Can\+Move\+To@{set\+Can\+Move\+To}}
+\index{set\+Can\+Move\+To@{set\+Can\+Move\+To}!model\+::\+Checkers\+Model@{model\+::\+Checkers\+Model}}
+\subsubsection[{set\+Can\+Move\+To}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf Pair}$>$ model.\+Checkers\+Model.\+set\+Can\+Move\+To (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\label{classmodel_1_1_checkers_model_a5bf2d3775839b95e7f13cf3e765b6981}
+
+
+Visszaadja azon poziciok listajat, ahova lephetunk. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List -\/ azon poziciok listaja, ahova lephetunk 
+\end{DoxyReturn}
+\hypertarget{classmodel_1_1_checkers_model_ad36574e98ce2f7b1983d25c376e0a3e6}{}\index{model\+::\+Checkers\+Model@{model\+::\+Checkers\+Model}!set\+Figure@{set\+Figure}}
+\index{set\+Figure@{set\+Figure}!model\+::\+Checkers\+Model@{model\+::\+Checkers\+Model}}
+\subsubsection[{set\+Figure}]{\setlength{\rightskip}{0pt plus 5cm}void model.\+Checkers\+Model.\+set\+Figure (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{{\bf Checkers\+Figure}}]{f}
+\end{DoxyParamCaption}
+)}\label{classmodel_1_1_checkers_model_ad36574e98ce2f7b1983d25c376e0a3e6}
+
+
+A tablat reprezentalo matrix adott poziciojat beallitja a parameterul kapott figuranak. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+{\em f} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmodel_1_1_checkers_model_aaafda9b9ae1510b65a7c1a576255a5b0}{}\index{model\+::\+Checkers\+Model@{model\+::\+Checkers\+Model}!stone\+Can\+Capture@{stone\+Can\+Capture}}
+\index{stone\+Can\+Capture@{stone\+Can\+Capture}!model\+::\+Checkers\+Model@{model\+::\+Checkers\+Model}}
+\subsubsection[{stone\+Can\+Capture}]{\setlength{\rightskip}{0pt plus 5cm}boolean model.\+Checkers\+Model.\+stone\+Can\+Capture (
+\begin{DoxyParamCaption}
+\item[{int}]{from\+X, }
+\item[{int}]{from\+Y, }
+\item[{int}]{to\+X, }
+\item[{int}]{to\+Y}
+\end{DoxyParamCaption}
+)}\label{classmodel_1_1_checkers_model_aaafda9b9ae1510b65a7c1a576255a5b0}
+
+
+Azt figyeli, hogy le tudunk e venni az ellenfel jatekosai kozul. (alapbabuval) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em from\+X} & \\
+\hline
+{\em from\+Y} & \\
+\hline
+{\em to\+X} & \\
+\hline
+{\em to\+Y} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+\hypertarget{classmodel_1_1_checkers_model_a3390a48c6e78518edd28532969fc46d6}{}\index{model\+::\+Checkers\+Model@{model\+::\+Checkers\+Model}!stone\+Can\+Move@{stone\+Can\+Move}}
+\index{stone\+Can\+Move@{stone\+Can\+Move}!model\+::\+Checkers\+Model@{model\+::\+Checkers\+Model}}
+\subsubsection[{stone\+Can\+Move}]{\setlength{\rightskip}{0pt plus 5cm}boolean model.\+Checkers\+Model.\+stone\+Can\+Move (
+\begin{DoxyParamCaption}
+\item[{int}]{from\+X, }
+\item[{int}]{from\+Y, }
+\item[{int}]{to\+X, }
+\item[{int}]{to\+Y}
+\end{DoxyParamCaption}
+)}\label{classmodel_1_1_checkers_model_a3390a48c6e78518edd28532969fc46d6}
+
+
+Honnan hova lephetunk figyeleset vegzo fuggeny (alapbabuval). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em from\+X} & \\
+\hline
+{\em from\+Y} & \\
+\hline
+{\em to\+X} & \\
+\hline
+{\em to\+Y} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/Ádám/\+Desktop/2/checkers/src/model/Checkers\+Model.\+java\end{DoxyCompactItemize}

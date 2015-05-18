@@ -1,0 +1,253 @@
+\hypertarget{classview_1_1_checkers_view}{}\section{view.\+Checkers\+View Class Reference}
+\label{classview_1_1_checkers_view}\index{view.\+Checkers\+View@{view.\+Checkers\+View}}
+
+
+A dama jatek megjeleniteset vegzo osztaly.  
+
+
+Inheritance diagram for view.\+Checkers\+View\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classview_1_1_checkers_view}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries Close\+Listener}
+\begin{DoxyCompactList}\small\item\em Ablak bezaras esemenyt figyelo osztaly. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classview_1_1_checkers_view_a32d5da333ffe78031b1717b10a583d01}{}void \hyperlink{classview_1_1_checkers_view_a32d5da333ffe78031b1717b10a583d01}{add\+Controller} (Action\+Listener controller)\label{classview_1_1_checkers_view_a32d5da333ffe78031b1717b10a583d01}
+
+\begin{DoxyCompactList}\small\item\em Eseménykezelok hozzaadasa a gombokhoz, tablahoz. \end{DoxyCompactList}\item 
+\hypertarget{classview_1_1_checkers_view_a5ed677cd4f78c6168bebbe4bf311bff5}{}void \hyperlink{classview_1_1_checkers_view_a5ed677cd4f78c6168bebbe4bf311bff5}{go\+To\+Menu} ()\label{classview_1_1_checkers_view_a5ed677cd4f78c6168bebbe4bf311bff5}
+
+\begin{DoxyCompactList}\small\item\em Vissza a menube gomb mukodtetese. \end{DoxyCompactList}\item 
+void \hyperlink{classview_1_1_checkers_view_a68fe3b1f0a965c499d06c2c0ac4364bf}{set\+Unselected} (\hyperlink{classview_1_1_button}{Button} bu)
+\begin{DoxyCompactList}\small\item\em Vissza allitjuk a korabbi szinre a gomb szinet, \char`\"{}nincs kijelölve\char`\"{}. \end{DoxyCompactList}\item 
+\hypertarget{classview_1_1_checkers_view_a8a5602a18f240d3262866c354995c4e5}{}void \hyperlink{classview_1_1_checkers_view_a8a5602a18f240d3262866c354995c4e5}{reset\+Back\+Grounds} ()\label{classview_1_1_checkers_view_a8a5602a18f240d3262866c354995c4e5}
+
+\begin{DoxyCompactList}\small\item\em Visszaallitja a tablat az eredeti allapotba. \end{DoxyCompactList}\item 
+void \hyperlink{classview_1_1_checkers_view_a6aba0221126505b6647d0e3265bd1d93}{set\+Queen} (int x, int y, boolean dark)
+\begin{DoxyCompactList}\small\item\em Stone-\/bol kiralyno (dama). \end{DoxyCompactList}\item 
+void \hyperlink{classview_1_1_checkers_view_a7ed18b58b6aad5b1aafe96c26e5941ca}{set\+Red} (\hyperlink{classview_1_1_button}{Button} bu)
+\begin{DoxyCompactList}\small\item\em Beállítja a parameterkent kapott gomb szinet pirosra. \end{DoxyCompactList}\item 
+void \hyperlink{classview_1_1_checkers_view_a0fb36a93cfc88b8a844df820fdf0dc11}{set\+Blue} (\hyperlink{classview_1_1_button}{Button} bu)
+\begin{DoxyCompactList}\small\item\em Beállítja a parameteskent kapott gomb szinet kekre. \end{DoxyCompactList}\item 
+\hyperlink{classview_1_1_button}{Button} \hyperlink{classview_1_1_checkers_view_a0cec5bc3e85bb43da33dc98bb84cb618}{get\+Button\+At} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Visszadjuk a parameterkent kapott pozicioban talalhato gombot. \end{DoxyCompactList}\item 
+Icon \hyperlink{classview_1_1_checkers_view_a4193841f5fe3bf1a4345d947630eac82}{get\+Icon} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Visszaadja az adott pozicion talalhato gomb ikonjat. \end{DoxyCompactList}\item 
+void \hyperlink{classview_1_1_checkers_view_aaa2497d67e7b4ff8def470ce78068ff7}{set\+Icon} (int x, int y, Icon icon)
+\begin{DoxyCompactList}\small\item\em Az adott pozicion levo gombnak a parameterul kapott ikont adjuk kepkent. \end{DoxyCompactList}\item 
+void \hyperlink{classview_1_1_checkers_view_aba0423decf4638146a48f9ec40a9464c}{game\+Over} (boolean dark)
+\begin{DoxyCompactList}\small\item\em Jatek veget jelzo ablak. \end{DoxyCompactList}\item 
+void \hyperlink{classview_1_1_checkers_view_a7a71823b8690bb5cadcfe1fa530b2e00}{set\+Label} (boolean dark)
+\begin{DoxyCompactList}\small\item\em A kovetkezo jatekos jelzesere szolgalo kiiras. \end{DoxyCompactList}\item 
+void \hyperlink{classview_1_1_checkers_view_a5a4d8d0eac9b0d605821d1826718aaa2}{update} (Observable o, Object arg)
+\begin{DoxyCompactList}\small\item\em Kotelezoen feluldefinialando fuggveny. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A dama jatek megjeleniteset vegzo osztaly. 
+
+\begin{DoxyAuthor}{Author}
+team05 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classview_1_1_checkers_view_aba0423decf4638146a48f9ec40a9464c}{}\index{view\+::\+Checkers\+View@{view\+::\+Checkers\+View}!game\+Over@{game\+Over}}
+\index{game\+Over@{game\+Over}!view\+::\+Checkers\+View@{view\+::\+Checkers\+View}}
+\subsubsection[{game\+Over}]{\setlength{\rightskip}{0pt plus 5cm}void view.\+Checkers\+View.\+game\+Over (
+\begin{DoxyParamCaption}
+\item[{boolean}]{dark}
+\end{DoxyParamCaption}
+)}\label{classview_1_1_checkers_view_aba0423decf4638146a48f9ec40a9464c}
+
+
+Jatek veget jelzo ablak. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dark} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classview_1_1_checkers_view_a0cec5bc3e85bb43da33dc98bb84cb618}{}\index{view\+::\+Checkers\+View@{view\+::\+Checkers\+View}!get\+Button\+At@{get\+Button\+At}}
+\index{get\+Button\+At@{get\+Button\+At}!view\+::\+Checkers\+View@{view\+::\+Checkers\+View}}
+\subsubsection[{get\+Button\+At}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Button} view.\+Checkers\+View.\+get\+Button\+At (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\label{classview_1_1_checkers_view_a0cec5bc3e85bb43da33dc98bb84cb618}
+
+
+Visszadjuk a parameterkent kapott pozicioban talalhato gombot. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+button 
+\end{DoxyReturn}
+\hypertarget{classview_1_1_checkers_view_a4193841f5fe3bf1a4345d947630eac82}{}\index{view\+::\+Checkers\+View@{view\+::\+Checkers\+View}!get\+Icon@{get\+Icon}}
+\index{get\+Icon@{get\+Icon}!view\+::\+Checkers\+View@{view\+::\+Checkers\+View}}
+\subsubsection[{get\+Icon}]{\setlength{\rightskip}{0pt plus 5cm}Icon view.\+Checkers\+View.\+get\+Icon (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\label{classview_1_1_checkers_view_a4193841f5fe3bf1a4345d947630eac82}
+
+
+Visszaadja az adott pozicion talalhato gomb ikonjat. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+icon 
+\end{DoxyReturn}
+\hypertarget{classview_1_1_checkers_view_a0fb36a93cfc88b8a844df820fdf0dc11}{}\index{view\+::\+Checkers\+View@{view\+::\+Checkers\+View}!set\+Blue@{set\+Blue}}
+\index{set\+Blue@{set\+Blue}!view\+::\+Checkers\+View@{view\+::\+Checkers\+View}}
+\subsubsection[{set\+Blue}]{\setlength{\rightskip}{0pt plus 5cm}void view.\+Checkers\+View.\+set\+Blue (
+\begin{DoxyParamCaption}
+\item[{{\bf Button}}]{bu}
+\end{DoxyParamCaption}
+)}\label{classview_1_1_checkers_view_a0fb36a93cfc88b8a844df820fdf0dc11}
+
+
+Beállítja a parameteskent kapott gomb szinet kekre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bu} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classview_1_1_checkers_view_aaa2497d67e7b4ff8def470ce78068ff7}{}\index{view\+::\+Checkers\+View@{view\+::\+Checkers\+View}!set\+Icon@{set\+Icon}}
+\index{set\+Icon@{set\+Icon}!view\+::\+Checkers\+View@{view\+::\+Checkers\+View}}
+\subsubsection[{set\+Icon}]{\setlength{\rightskip}{0pt plus 5cm}void view.\+Checkers\+View.\+set\+Icon (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{Icon}]{icon}
+\end{DoxyParamCaption}
+)}\label{classview_1_1_checkers_view_aaa2497d67e7b4ff8def470ce78068ff7}
+
+
+Az adott pozicion levo gombnak a parameterul kapott ikont adjuk kepkent. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+{\em icon} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classview_1_1_checkers_view_a7a71823b8690bb5cadcfe1fa530b2e00}{}\index{view\+::\+Checkers\+View@{view\+::\+Checkers\+View}!set\+Label@{set\+Label}}
+\index{set\+Label@{set\+Label}!view\+::\+Checkers\+View@{view\+::\+Checkers\+View}}
+\subsubsection[{set\+Label}]{\setlength{\rightskip}{0pt plus 5cm}void view.\+Checkers\+View.\+set\+Label (
+\begin{DoxyParamCaption}
+\item[{boolean}]{dark}
+\end{DoxyParamCaption}
+)}\label{classview_1_1_checkers_view_a7a71823b8690bb5cadcfe1fa530b2e00}
+
+
+A kovetkezo jatekos jelzesere szolgalo kiiras. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dark} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classview_1_1_checkers_view_a6aba0221126505b6647d0e3265bd1d93}{}\index{view\+::\+Checkers\+View@{view\+::\+Checkers\+View}!set\+Queen@{set\+Queen}}
+\index{set\+Queen@{set\+Queen}!view\+::\+Checkers\+View@{view\+::\+Checkers\+View}}
+\subsubsection[{set\+Queen}]{\setlength{\rightskip}{0pt plus 5cm}void view.\+Checkers\+View.\+set\+Queen (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{boolean}]{dark}
+\end{DoxyParamCaption}
+)}\label{classview_1_1_checkers_view_a6aba0221126505b6647d0e3265bd1d93}
+
+
+Stone-\/bol kiralyno (dama). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+{\em dark} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classview_1_1_checkers_view_a7ed18b58b6aad5b1aafe96c26e5941ca}{}\index{view\+::\+Checkers\+View@{view\+::\+Checkers\+View}!set\+Red@{set\+Red}}
+\index{set\+Red@{set\+Red}!view\+::\+Checkers\+View@{view\+::\+Checkers\+View}}
+\subsubsection[{set\+Red}]{\setlength{\rightskip}{0pt plus 5cm}void view.\+Checkers\+View.\+set\+Red (
+\begin{DoxyParamCaption}
+\item[{{\bf Button}}]{bu}
+\end{DoxyParamCaption}
+)}\label{classview_1_1_checkers_view_a7ed18b58b6aad5b1aafe96c26e5941ca}
+
+
+Beállítja a parameterkent kapott gomb szinet pirosra. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bu} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classview_1_1_checkers_view_a68fe3b1f0a965c499d06c2c0ac4364bf}{}\index{view\+::\+Checkers\+View@{view\+::\+Checkers\+View}!set\+Unselected@{set\+Unselected}}
+\index{set\+Unselected@{set\+Unselected}!view\+::\+Checkers\+View@{view\+::\+Checkers\+View}}
+\subsubsection[{set\+Unselected}]{\setlength{\rightskip}{0pt plus 5cm}void view.\+Checkers\+View.\+set\+Unselected (
+\begin{DoxyParamCaption}
+\item[{{\bf Button}}]{bu}
+\end{DoxyParamCaption}
+)}\label{classview_1_1_checkers_view_a68fe3b1f0a965c499d06c2c0ac4364bf}
+
+
+Vissza allitjuk a korabbi szinre a gomb szinet, \char`\"{}nincs kijelölve\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bu} & \\
+\hline
+\end{DoxyParams}
+\hypertarget{classview_1_1_checkers_view_a5a4d8d0eac9b0d605821d1826718aaa2}{}\index{view\+::\+Checkers\+View@{view\+::\+Checkers\+View}!update@{update}}
+\index{update@{update}!view\+::\+Checkers\+View@{view\+::\+Checkers\+View}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void view.\+Checkers\+View.\+update (
+\begin{DoxyParamCaption}
+\item[{Observable}]{o, }
+\item[{Object}]{arg}
+\end{DoxyParamCaption}
+)}\label{classview_1_1_checkers_view_a5a4d8d0eac9b0d605821d1826718aaa2}
+
+
+Kotelezoen feluldefinialando fuggveny. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em o} & \\
+\hline
+{\em arg} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/Ádám/\+Desktop/2/checkers/src/view/Checkers\+View.\+java\end{DoxyCompactItemize}
