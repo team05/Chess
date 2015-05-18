@@ -352,6 +352,9 @@ public class CheckersModel extends java.util.Observable {
         }
         return false;
     }
-    
+    //utes logikai valtozo lekerese
+    public boolean getCanCapture() {
+        return canCapture;
+    }
     
 }
