@@ -10,6 +10,7 @@ import model.Pair;
 import view.Button;
 import view.ChessView;
 
+/** Controller class */
 public class ChessController implements java.awt.event.ActionListener {
 
     ChessModel model;
@@ -18,11 +19,7 @@ public class ChessController implements java.awt.event.ActionListener {
     private List<Pair> canMoveToList = new ArrayList<>();
     private int lastPosX, lastPosY;
 
-    public ChessController() {
-
-    }
-
-    @Override
+    @Override    
     public void actionPerformed(java.awt.event.ActionEvent e) {
 
         if ((e.getSource().getClass()).toString().equals("class javax.swing.JButton")) {
@@ -52,6 +49,11 @@ public class ChessController implements java.awt.event.ActionListener {
         }
     }
 
+    /**
+     * Selects piece on (x, y)
+     * @param x Row (rank) to be selected
+     * @param y Column (file) to be selected
+     */
     public void selectFigure(int x, int y) {
         
         if (model.getFigure(x,y) != null) {
@@ -72,6 +74,11 @@ public class ChessController implements java.awt.event.ActionListener {
         }
     }
 
+    /**
+     * Move piece to (x, y)
+     * @param x Rank to move
+     * @param y File to move
+     */
     public void moveFigure(int x, int y) {
 
         Pair it;
@@ -115,6 +122,7 @@ public class ChessController implements java.awt.event.ActionListener {
 
     }
 
+    
     public void isIn(Button bu) {
         int x = bu.getPosX(); int y = bu.getPosY();
         if (model.getFigure(x, y).getType() == ChessFigure.TypeOfFigure.PAWN)  { // instanceof Pawn) {
@@ -143,9 +151,4 @@ public class ChessController implements java.awt.event.ActionListener {
     public void addView(ChessView v) {
         this.view = v;
     }
-
-    public void initModel(int x) {
-
-    }
-
 }
