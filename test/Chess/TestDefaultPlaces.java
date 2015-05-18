@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package Chess;
 
 import model.ChessFigure;
@@ -16,8 +10,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
- * @author Patrik
+ *  Test valid placement of pieces.
  */
 public class TestDefaultPlaces {
     
@@ -53,29 +46,4 @@ public class TestDefaultPlaces {
             assertTrue("test failed at default light figure's place",(myUnit.getFigure(i, 6)).getType() == ChessFigure.TypeOfFigure.PAWN); // instanceof Pawn);
         }
     }
-    
-    public TestDefaultPlaces() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
-
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
 }
