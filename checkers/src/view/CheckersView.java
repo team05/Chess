@@ -19,6 +19,12 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+/**
+ * 
+ * @author team05
+ * \brief
+ * A dama jatek megjeleniteset vegzo osztaly.
+ */
 public class CheckersView implements java.util.Observer {
 
     private JPanel gamePanel;
@@ -29,7 +35,11 @@ public class CheckersView implements java.util.Observer {
     private JButton backToMenu = new JButton("Back to menu");
     private Image rStone, bStone, rQueen, bQueen;
     private Color oldBackGroundColor; //a régi gomb színe
-
+    /**
+     * \brief
+     * Konstruktor.
+     * Letrehozza a menu es a tabla teruleteit.
+     */
     CheckersView() {
 
         buttons = new Button[8][8];
@@ -55,7 +65,10 @@ public class CheckersView implements java.util.Observer {
 
     }
 
-    //tábla felepitese
+    /**
+     * \brief
+     * A tabla felepitese.
+     */
     private void initButtons() {
         gamePanel.removeAll();
         gamePanel.setLayout(new GridLayout(8, 8));
@@ -81,7 +94,10 @@ public class CheckersView implements java.util.Observer {
         }
     }
 
-    //eseménykezelok a gombokhoz, tablahoz
+    /**
+     * \brief
+     * Eseménykezelok hozzaadasa a gombokhoz, tablahoz.
+     */
     public void addController(ActionListener controller) {
 
         newGameButton.addActionListener(controller);
@@ -94,14 +110,21 @@ public class CheckersView implements java.util.Observer {
 
     }
 
-    //vissza a menube
+    /**
+     * \brief
+     * Vissza a menube gomb mukodtetese.
+     */
     public void goToMenu() {
         new MainFrame().setVisible(true);
         frame.setVisible(false);
         frame.dispose();
     }
 
-    //gombhoz ikonok (kepek)
+    /**
+     * \brief
+     * Gombokhoz ikonok (kepek) hozzaadasa.
+     * 
+     */
     private void addIconToButton(int x, int y, JButton bu) {
         // kek
         if (y == 0 || y == 2) {
@@ -130,11 +153,19 @@ public class CheckersView implements java.util.Observer {
         }
 
     }
-    //vissza állítjuk a korábbi színre a gomb színét, ,,nincs kijelölve"
+    
+    /**
+     * \brief
+     * Vissza allitjuk a korabbi szinre a gomb szinet, "nincs kijelölve". 
+     * @param bu 
+     */
     public void setUnselected(Button bu) {
         bu.setBackground(oldBackGroundColor);
     }
-    //voisszaállítja a táblát az eredeti állapotba
+    /**
+     * \brief
+     * Visszaallitja a tablat az eredeti allapotba. 
+     */
     public void resetBackGrounds() {
         int z = 1;
         for (int j = 0; j < 8; j++) {
@@ -152,6 +183,14 @@ public class CheckersView implements java.util.Observer {
             z++;
         }
     }
+    /**
+     * 
+     * @param x
+     * @param y
+     * @param dark 
+     * \brief
+     * Stone-bol kiralyno (dama).
+     */
     public void setQueen(int x, int y, boolean dark) {
         if (dark) {
             buttons[x][y].setIcon(new ImageIcon(bQueen));
@@ -160,31 +199,64 @@ public class CheckersView implements java.util.Observer {
         }
     }
     
-    //beállítjuk a kiválasztott gomb színét pirosra
+   
+    /**
+     * \brief
+     * Beállítja a parameterkent kapott gomb szinet pirosra.
+     * @param bu 
+     */
     public void setRed(Button bu) {
         oldBackGroundColor = bu.getBackground();
         bu.setBackground(Color.red);
     }
-    //gomb háttérszínét beállítjuk kékre
+      /**
+     * \brief
+     * Beállítja a parameteskent kapott gomb szinet kekre.
+     * @param bu 
+     */
     public void setBlue(Button bu) {
 
         bu.setBackground(Color.blue);
     }
     
-    //visszadjuk a paraméterként kapott pozícióban található gombot
+    /**
+     * 
+     * @param x
+     * @param y
+     * @return button
+     * \brief
+     * Visszadjuk a parameterkent kapott pozicioban talalhato gombot
+     */
     public Button getButtonAt(int x, int y) {
         return buttons[x][y];
     }
-    //visszaadja az ikont
+    /**
+     * 
+     * @param x
+     * @param y
+     * @return icon
+     * \brief
+     * Visszaadja az adott pozicion talalhato gomb ikonjat.
+     */
     public Icon getIcon(int x, int y) {
         return buttons[x][y].getIcon();
     }
-    //beállítjuk az ikont
+    /**
+     * 
+     * @param x
+     * @param y
+     * @param icon 
+     * \brief
+     * Az adott pozicion levo gombnak a parameterul kapott ikont adjuk kepkent.
+     */
     public void setIcon(int x, int y, Icon icon) {
         buttons[x][y].setIcon(icon);
     }
 
-    //képek betöltése
+    /**
+     * \brief
+     * Babuk kepenek betoltese.
+     */
     private void loadIcons() {
         try {
             rStone = ImageIO.read(getClass().getResource("resources/redStone.jpg"));
@@ -196,7 +268,12 @@ public class CheckersView implements java.util.Observer {
             System.out.println("Nincs meg valamelyik bábu ikonja!");
         }
     }
-    //játék végét kiíró ablak
+    /**
+     * 
+     * @param dark 
+     * \brief
+     * Jatek veget jelzo ablak.
+     */
     public void gameOver(boolean dark) {
         if (dark) {
             JOptionPane.showMessageDialog(null,
@@ -210,7 +287,12 @@ public class CheckersView implements java.util.Observer {
                     JOptionPane.PLAIN_MESSAGE);
         }
     }
-    
+    /**
+     * 
+     * @param dark 
+     * \brief
+     * A kovetkezo jatekos jelzesere szolgalo kiiras.
+     */
     public void setLabel(boolean dark) {
         if (dark) {
             nextPlayer.setText("     Next Player: Blue");
@@ -218,12 +300,20 @@ public class CheckersView implements java.util.Observer {
             nextPlayer.setText("     Next Player: Red");
         }
     }
-
+    /**
+     * 
+     * @param o
+     * @param arg 
+     * \brief
+     * Kotelezoen feluldefinialando fuggveny.
+     */
     @Override
     public void update(Observable o, Object arg) {
     }
-    //ablak bezárás figyelése
-
+    /**
+     * \brief
+     * Ablak bezaras esemenyt figyelo osztaly.
+     */
     public static class CloseListener extends WindowAdapter {
 
         @Override

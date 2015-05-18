@@ -14,6 +14,12 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+/**
+ * 
+ * @author team05
+ * \brief
+ * A tabla felrakasat tesztelo osztaly.
+ */
 public class TestDefaultColors {
     
     

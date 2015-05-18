@@ -16,8 +16,10 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
- * @author Patrik
+ * 
+ * @author team05
+ * \brief
+ * Az alapjatekosokat es azok felrakasat tesztelo osztaly.
  */
 public class TestDefaultPlaces {
     

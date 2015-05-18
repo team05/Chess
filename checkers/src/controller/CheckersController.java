@@ -10,7 +10,12 @@ import model.Stone;
 import view.Button;
 
 import view.CheckersView;
-
+/**
+ * 
+ * @author team05
+ * \brief
+ * A modellt es a nezetet osszekoto osztaly.
+ */
 public class CheckersController implements java.awt.event.ActionListener {
 
     CheckersModel model;
@@ -19,10 +24,18 @@ public class CheckersController implements java.awt.event.ActionListener {
     //bábuk mozgatását segíti
     private List<Pair> canMoveToList = new ArrayList<>();
     private int lastPosX, lastPosY;
-
+    /**
+     * \brief
+     * Konstruktor
+     */
     public CheckersController() {
     }
-
+    /**
+     * 
+     * @param e 
+     * \brief
+     * Esemenyt var parameterul. Aszerint jar el, hogy a jatekter mely reszere kattintottunk.
+     */
     @Override
     public void actionPerformed(java.awt.event.ActionEvent e) {
 
@@ -62,7 +75,12 @@ public class CheckersController implements java.awt.event.ActionListener {
         }
     }
 
-    //kiválasztjuk a gombot, elmentjük az adatait
+    /**
+     * 
+     * @param bu 
+     * \brief
+     * Parameterul kaott jatekter elem adatainak tarolasat vegzo fuggveny. Elem kivalasztasa.
+     */
     private void selectFigure(Button bu) {
         if (model.getFigure(bu.getPosX(), bu.getPosY()) != null) {
             //mentjük az adatokat
@@ -81,7 +99,12 @@ public class CheckersController implements java.awt.event.ActionListener {
             }
         }
     }
-    //mozdítja a figurát
+    /**
+     * 
+     * @param bu 
+     * \brief
+     * Jatekos lepeset megvalosito fuggveny.
+     */
     private void moveFigure(Button bu) {
         Pair it;
         int h = 0;
@@ -123,7 +146,12 @@ public class CheckersController implements java.awt.event.ActionListener {
         }
 
     }
-    //a gomb elfoglalja a helyét
+    /**
+     * 
+     * @param bu 
+     * \brief
+     * A parameterul kapott gomb ut egy ellenfel babut. Az ellenfelet eltuntetni, a jatekost leptetni kell.
+     */
     public void capture(Button bu) {
         if (lastPosX == bu.getPosX() + 2 && lastPosY == bu.getPosY() + 2) {
             view.setIcon(lastPosX - 1, lastPosY - 1, null);
@@ -145,7 +173,12 @@ public class CheckersController implements java.awt.event.ActionListener {
             model.setFigure(lastPosX + 1, lastPosY - 1, null);
         }
     }
-    //,,királynővé" válik a gomb
+    /**
+     * 
+     * @param bu 
+     * \brief
+     * A jatekos atert az ellenfel alapvonalara, kiralynove valtozik, innentol hatrafele is lephet.
+     */
     public void becomeQueen(Button bu) {
         if (model.getFigure(bu.getPosX(), bu.getPosY()) instanceof Stone) {
             if (model.getFigure(bu.getPosX(), bu.getPosY()).isDark()) {
@@ -165,11 +198,21 @@ public class CheckersController implements java.awt.event.ActionListener {
 
         }
     }
-
+    /**
+     * 
+     * @param m 
+     * \brief
+     * Osszekottetes megteremtese a modellel.
+     */
     public void addModel(CheckersModel m) {
         this.model = m;
     }
-
+    /**
+     * 
+     * @param v 
+     * \brief
+     * Osszekottetes megteremtese a nezettel.
+     */
     public void addView(CheckersView v) {
         this.view = v;
     }

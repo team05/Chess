@@ -3,13 +3,19 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *
+ * @author team05 \brief A tabla modellje. Logikailag itt zajlik a jatek.
+ */
 public class CheckersModel extends java.util.Observable {
 
     //a tábla modellezése
     private CheckersFigure[][] cells = new CheckersFigure[8][8];
     private boolean canCapture;
 
-    //tábla modellje
+    /**
+     * \brief A standard jatekosok betoltese.
+     */
     public void setDefaultFigures() {
         int z = 0;
 
@@ -34,11 +40,25 @@ public class CheckersModel extends java.util.Observable {
             z++;
         }
     }
-    //visszaadja a figurát a paraméterként kapott helyről
+
+    /**
+     *
+     * @param x
+     * @param y
+     * @return CheckersFigure \brief Adott poziciorol visszaadja a babu
+     * objektumot.
+     */
     public CheckersFigure getFigure(int x, int y) {
         return cells[x][y];
     }
-    //beállítja, hogy a paraméterként kapott pozíciókból, hová lehet lépni
+
+    /**
+     *
+     * @param x
+     * @param y
+     * @return List - azon poziciok listaja, ahova lephetunk \brief Visszaadja
+     * azon poziciok listajat, ahova lephetunk.
+     */
     public List<Pair> setCanMoveTo(int x, int y) {
         List<Pair> canMoveToList = new ArrayList<>();
         canCapture = false;
@@ -88,13 +108,23 @@ public class CheckersModel extends java.util.Observable {
 
         return canMoveToList;
     }
-    //hova léphet a királnynő
-    
-    //beállítjuk a pozícióba a kirajzolandó figurát
+
+    /**
+     *
+     * @param x
+     * @param y
+     * @param f \brief A tablat reprezentalo matrix adott poziciojat beallitja a
+     * parameterul kapott figuranak.
+     */
     public void setFigure(int x, int y, CheckersFigure f) {
         cells[x][y] = f;
     }
-    //a játék végét vizsgáló függvény
+
+    /**
+     *
+     * @param dark
+     * @return boolean \brief A jatek veget figyelo fuggveny.
+     */
     public boolean isGameOver(boolean dark) {
         boolean empty = true;
         //ha egyik pozícióba sem tud lépni, akkor vége a játéknak
@@ -121,8 +151,16 @@ public class CheckersModel extends java.util.Observable {
         }
         return empty;
     }
-    
-    //hova léphetünk, alacsony szintű megvalósítása
+
+    /**
+     *
+     * @param fromX
+     * @param fromY
+     * @param toX
+     * @param toY
+     * @return boolean \brief Honnan hova lephetunk figyeleset vegzo fuggeny
+     * (alapbabuval).
+     */
     public boolean stoneCanMove(int fromX, int fromY, int toX, int toY) {
         if (!(getFigure(fromX, fromY).isDark())) {
             //balra fel
@@ -165,7 +203,16 @@ public class CheckersModel extends java.util.Observable {
         }
         return getFigure(fromX, fromY).canMoveTo(toX, toY);
     }
-    //hova léphetünk a másik bábuval
+
+    /**
+     *
+     * @param fromX
+     * @param fromY
+     * @param toX
+     * @param toY
+     * @return boolean \brief Honnan hova lephetunk figyeleset vegzo fuggeny
+     * (kiralynovel).
+     */
     public boolean queenCanMove(int fromX, int fromY, int toX, int toY) {
 
         //balra fel
@@ -206,8 +253,16 @@ public class CheckersModel extends java.util.Observable {
 
         return getFigure(fromX, fromY).canMoveTo(toX, toY);
     }
-    
-    //elfoglalhatjuk-e a másik mezőt
+
+    /**
+     *
+     * @param fromX
+     * @param fromY
+     * @param toX
+     * @param toY
+     * @return boolean \brief Azt figyeli, hogy le tudunk e venni az ellenfel
+     * jatekosai kozul. (alapbabuval)
+     */
     public boolean stoneCanCapture(int fromX, int fromY, int toX, int toY) {
         if (!(getFigure(fromX, fromY).isDark())) {
             //balra fel
@@ -257,7 +312,16 @@ public class CheckersModel extends java.util.Observable {
         }
         return false;
     }
-    //elfoglalhatjuk-e a másik mezőt
+
+    /**
+     *
+     * @param fromX
+     * @param fromY
+     * @param toX
+     * @param toY
+     * @return bool \brief Azt figyeli, hogy le tudunk e venni az ellenfel
+     * jatekosai kozul. (kiralynovel)
+     */
     public boolean queenCanCapture(int fromX, int fromY, int toX, int toY) {
         if (!(getFigure(fromX, fromY).isDark())) {
             //balra fel
@@ -352,6 +416,5 @@ public class CheckersModel extends java.util.Observable {
         }
         return false;
     }
-    
-    
+
 }

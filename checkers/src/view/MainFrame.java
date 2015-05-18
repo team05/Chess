@@ -10,9 +10,18 @@ import javax.swing.JFrame;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import model.CheckersModel;
 
-
+/**
+ * 
+ * @author team05
+ * \brief
+ * A jatek megjelniteset vegzo osztaly.
+ */
 public class MainFrame extends JFrame {
-
+    /**
+     * \brief
+     * Konstruktor.
+     * Egy gombot jelenit meg, melynek hatasara kirajzolodik a palya.
+     */
     public MainFrame() {
 
         setTitle("Checker");
@@ -28,7 +37,11 @@ public class MainFrame extends JFrame {
         pack();
     }
 
-    
+    /**
+     * \brief
+     * A jatek inditasat figyelo esemenykezelo.
+     * Betolti az MVC felepiteshez szukseges elemeket.
+     */
     private ActionListener checkersActionListener = new ActionListener() {
 
         @Override
