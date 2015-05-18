@@ -43,7 +43,6 @@ public class MainFrame extends JFrame {
             ChessController myController = new ChessController();
             myController.addModel(myModel);
             myController.addView(myView);
-            myController.initModel(9);
 
             myView.addController(myController);
 
