@@ -1,3 +1,9 @@
+/**
+A Figure osztalybol szarmazo figurakat tartalmazo osztaly.
+Egy attributuma van az osztalynak, a figura tipusa, ezen kivul az ososztaly attributumai: x, y pozicio es a szine.
+A konstruktor parameterkent kapja a babu poziciojat, szinet es tipusat.
+*/
+
 package model;
 
 

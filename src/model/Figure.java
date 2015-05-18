@@ -1,3 +1,8 @@
+/**
+A figurakhoz szukseges absztrakt osztaly.
+Attributumai az X,Y poziciok es a szine.
+*/
+
 package model;
 
 public abstract class Figure {

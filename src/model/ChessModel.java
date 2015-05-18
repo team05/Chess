@@ -1,3 +1,15 @@
+/**
+A sakktablat reprezentalo osztaly.
+A cells matrix tartalmazza, hogy hol milyen figura van.
+lKingPosX, lKingPosY dKingPosX, dKingPosY valtozok a kiralyok poziciojat taroljak.
+isInChess valtozo jelzi, hogy sakkban van-e.
+A setFigure fuggvenyt hivja a controller, hogy lepjen a babuval.
+A createLight és createDark fuggvenyek hozzak letre a jatek kezdoallapotat.
+Az isIn fuggveny a gyalogok beeresekor fut le, miutan a jatekos valasztott, hogy milyen figurat szeretne.
+A setCanMoveTo megvizsgalja, hogy a parameterkent kapott pozicion levo babu hova lephet, ehhez a tobbi canMoveTo fuggvenyt hasznalja attol fuggoen, hogy milyen babu van ott.
+A setInChess megvizsgalja, hogy sakkban van-e valamelyik jatekos es beallitja az isInChess valtozo erteket.
+*/
+
 package model;
 
 import java.util.ArrayList;
